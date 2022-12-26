@@ -1,0 +1,281 @@
+@import "../../common.scss";
+
+.work {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  line-height: 28px;
+  color: $text-color;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.work-title {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+  color: $white-color;
+  text-align: center;
+  vertical-align: top;
+  margin: 8px auto;
+}
+
+.br-mobile {
+  display: none;
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .work-slide-warper {
+    display: flex;
+    overflow: hidden;
+  }
+
+  .side-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-slide {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 48px;
+    flex-direction: column;
+    overflow: hidden;
+
+    &-image {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      animation: slideMove 7s infinite;
+      user-select: none;
+    }
+  }
+  .hr-work {
+    padding: 214px 0 0;
+    width: 90%;
+    height: 0px;
+    border-bottom: 1px solid $white-color;
+  }
+}
+
+$slideIndexes: 0, 1, 2;
+
+@each $index in $slideIndexes {
+  .dot-slide:nth-child(#{$index + 1}) {
+    animation: activeSlide 7s infinite;
+    animation-delay: #{$index * 2}s;
+  }
+}
+
+@keyframes activeSlide {
+  0% {
+    background-color: $primary-color;
+    width: 16px;
+    height: 16px;
+  }
+
+  28% {
+    background-color: $primary-color;
+    width: 16px;
+    height: 16px;
+  }
+
+  30% {
+    background-color: $text-color;
+    width: 12px;
+    height: 12px;
+  }
+
+  100% {
+    background-color: $text-color;
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@keyframes slideMove {
+  0% {
+    transform: translateX(0);
+  }
+
+  28% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(-100%);
+  }
+
+  58% {
+    transform: translateX(-100%);
+  }
+
+  60% {
+    transform: translateX(-200%);
+  }
+
+  88% {
+    transform: translateX(-200%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.btn-group {
+  display: flex;
+  width: 60%;
+  gap: 24px;
+  transition: all 1s;
+  .btn-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+}
+
+.dot-slide {
+  margin: 8px;
+  border-radius: 50%;
+  background-color: $text-color;
+}
+
+@media only screen and (max-width: 740px) and (max-height: 1039px) {
+  .content-work {
+    font-size: 16px;
+    line-height: 24px;
+    padding-top: 64px;
+  }
+
+  #br-desktop {
+    display: none;
+  }
+
+  .br-mobile {
+    display: block;
+  }
+
+  .work-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .bt-work {
+    height: 44px;
+  }
+
+  .work-slide {
+    padding-top: 24px;
+  }
+}
+
+.btn-group {
+  display: flex;
+  width: 60%;
+  margin-top: 40px;
+  transition: all 1s;
+  margin-bottom: 24px;
+}
+
+.dots-group {
+  display: inline-flex;
+  align-items: center;
+  height: 70px;
+  padding-top: 40px;
+  align-items: center;
+}
+
+.dot-slide {
+  width: 12px;
+  height: 12px;
+  margin: 8px;
+  border-radius: 50%;
+  background-color: $text-color;
+}
+
+@media screen and (max-width: $screen-xs-max) {
+  .work {
+    padding-top: 0;
+
+    .hr-work {
+      padding: 64px 0 0;
+    }
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      width: 342px;
+      gap: 12px;
+    }
+  }
+
+  .heading-3-box {
+    width: 95%;
+  }
+
+  .btn-group {
+    width: 95%;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+
+  .dot-slide {
+    width: 8px;
+    height: 8px;
+  }
+  .dots-group {
+    display: inline-flex;
+    align-items: center;
+    height: 30px;
+    padding-top: 8px;
+  }
+
+  @keyframes activeSlide {
+    0% {
+      background-color: $primary-color;
+      width: 12px;
+      height: 12px;
+    }
+
+    28% {
+      background-color: $primary-color;
+      width: 12px;
+      height: 12px;
+    }
+
+    30% {
+      background-color: $text-color;
+      width: 8px;
+      height: 8px;
+    }
+
+    100% {
+      background-color: $text-color;
+      width: 8px;
+      height: 8px;
+    }
+  }
+  .dots-group {
+    margin-top: 0px;
+  }
+}
+
+@include tablet() {
+  .work {
+    &-title {
+      font-size: 28px;
+      line-height: 36px;
+    }
+    .btn-group {
+      width: 75%;
+    }
+  }
+}

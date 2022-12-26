@@ -1,0 +1,317 @@
+.container-services {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.services {
+  width: 100%;
+  height: auto;
+  font-style: normal;
+  color: $text-color;
+  text-align: center;
+  padding-top: 208px;
+  margin-top: 8px;
+  &-header {
+    width: 100%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    color: $text-color;
+    text-transform: uppercase;
+  }
+  &-title {
+    height: auto;
+    width: 100%;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: $white-color;
+    padding: 8px 270px;
+  }
+  &-tech {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding-top: 104px;
+    column-gap: 24px;
+    row-gap: 40px;
+    width: 100%;
+    .services-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .item-title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 36px;
+        text-align: center;
+        letter-spacing: -0.02em;
+        color: $white-color;
+        flex: none;
+        order: 0;
+        align-self: stretch;
+        flex-grow: 0;
+        margin: 16px 0px;
+      }
+      .item-description {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+        text-align: center;
+        color: $text-color;
+        flex: none;
+        order: 1;
+        align-self: stretch;
+        flex-grow: 0;
+        margin: 16px 0px;
+      }
+      .item-img {
+        border: 1px solid $text-color;
+        border-radius: 50%;
+        padding: 30px;
+        width: 152px;
+        height: 152px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  &-btn {
+    color: $white-color;
+    width: 420px;
+    height: 56px;
+    margin: 64px auto 0 auto;
+    &:hover {
+      cursor: pointer;
+      background-color: $hover-color;
+      color: $white-color;
+    }
+  }
+  .tech-slide {
+    display: none;
+  }
+}
+
+@include mobile() {
+  .container-services {
+    padding: 64px 14px 0 14px;
+  }
+  .services {
+    width: 100%;
+    height: auto;
+    &-header {
+      width: 100%;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    &-title {
+      height: auto;
+      width: 100%;
+      font-size: 28px;
+      line-height: 36px;
+      padding: 8px 0;
+    }
+    &-tech {
+      display: none;
+    }
+    .tech-slide {
+      display: block;
+      margin-top: 50px;
+    }
+    .slide-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .tech-img {
+      border: 1px solid $text-color;
+      border-radius: 50%;
+      padding: 15px;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .tech-img img {
+      width: 80%;
+      height: 80%;
+    }
+    .tech-text {
+      margin-top: 12px;
+      &-title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 32px;
+        color: $white-color;
+      }
+      &-des {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 8px;
+        color: $text-color;
+        letter-spacing: 0.8px;
+      }
+    }
+    &-btn {
+      display: flex;
+      width: 100%;
+      height: 44px;
+      margin-top: 48px;
+    }
+  }
+}
+
+@include tablet() {
+  .container-services {
+    padding: 64px 14px 0 14px;
+  }
+  .services {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding-top: 100px;
+    &-header {
+      width: 100%;
+      font-size: 18px;
+      line-height: 28px;
+    }
+    &-title {
+      height: auto;
+      width: 100%;
+      font-size: 28px;
+      line-height: 36px;
+      padding: 8px 100px;
+    }
+    &-tech {
+      display: none;
+    }
+    .tech-slide {
+      display: block;
+      margin-top: 50px;
+      padding: 0 31px;
+    }
+    .tech-text h3 {
+      color: $white-color;
+    }
+    .slide-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .tech-img {
+      border: 1px solid $text-color;
+      border-radius: 50%;
+      padding: 15px;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .tech-img img {
+      width: 100%;
+      height: 100%;
+    }
+    .tech-text {
+      margin-top: 12px;
+      & > h3 {
+        color: $white-color;
+      }
+    }
+    .tech-text p {
+      margin-top: 8px;
+    }
+    &-btn {
+      width: 327px;
+      height: 44px;
+    }
+  }
+}
+
+@include smDesktop() {
+  .services {
+    padding: 208px 14px 0;
+    &-title {
+      padding: 8px 110px;
+    }
+    &-tech {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      padding-top: 104px;
+      column-gap: 24px;
+      row-gap: 40px;
+      width: 100%;
+      .services-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .item-title {
+          font-style: normal;
+          font-weight: 700;
+          font-size: 28px;
+          line-height: 36px;
+          text-align: center;
+          letter-spacing: -0.02em;
+          color: $white-color;
+          flex: none;
+          order: 0;
+          align-self: stretch;
+          flex-grow: 0;
+          margin: 16px 0px;
+        }
+        .item-description {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 28px;
+          text-align: center;
+          color: $text-color;
+          flex: none;
+          order: 1;
+          align-self: stretch;
+          flex-grow: 0;
+          margin: 16px 0px;
+        }
+        .item-img {
+          border: 1px solid $text-color;
+          border-radius: 50%;
+          padding: 30px;
+          width: 152px;
+          height: 152px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+    &-btn {
+      color: $white-color;
+      width: 420px;
+      height: 56px;
+      margin: 64px auto 0 auto;
+      &:hover {
+        cursor: pointer;
+        background-color: $hover-color;
+        color: $white-color;
+      }
+    }
+    .tech-slide {
+      display: none;
+    }
+  }
+}

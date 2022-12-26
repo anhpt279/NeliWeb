@@ -1,0 +1,27 @@
+.footer {
+  width: 100%;
+  height: auto;
+  padding-top: 120px;
+  &-text {
+    font-size: 14px;
+    line-height: 20px;
+    color: $text-color;
+    text-align: center;
+  }
+}
+
+@include mobile() {
+  .footer {
+    width: 100%;
+    padding-top: 48px;
+    &-text {
+      width: 100%;
+    }
+  }
+}
+
+@include tablet() {
+  .footer {
+    padding-top: 50px;
+  }
+}

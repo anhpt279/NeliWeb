@@ -1,0 +1,377 @@
+@import "../../common.scss";
+
+.container-team {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.team {
+  width: 100%;
+  height: auto;
+  padding-top: 192px;
+  margin-top: 8px;
+
+  &-header {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    color: $text-color;
+    text-transform: uppercase;
+  }
+
+  &-title {
+    height: auto;
+    width: 100%;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: $white-color;
+    padding: 0 108px;
+    margin-top: 8px;
+  }
+
+  &-slider {
+    display: none;
+  }
+
+  &-member {
+    margin-top: 95px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 24px;
+    row-gap: 63px;
+  }
+
+  &-cards {
+    border: 1px solid $boder-color;
+    box-sizing: border-box;
+    border-radius: 0px;
+    width: 100%;
+    height: 446px;
+    position: relative;
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $secondary-color;
+      opacity: 0;
+      display: none;
+    }
+
+    .overlay-content {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .overlay-link {
+      color: $white-color;
+      font-size: 18px;
+      line-height: 28px;
+      width: 200px;
+      text-decoration: none;
+    }
+  }
+
+  &-img {
+    width: 100%;
+    height: 72%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-cards:last-child img {
+    display: none;
+  }
+
+  &-text {
+    margin-top: 36px;
+    margin-left: 30px;
+  }
+
+  &-cards:last-child {
+    position: relative;
+    z-index: 1;
+
+    .team-text {
+      margin: -158px 0;
+      text-align: center;
+    }
+
+    .member-name {
+      color: $text-color;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 28px;
+      padding: 0 20px;
+    }
+
+    .member-job {
+      color: $white-color;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    .arrow-icon {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &-cards:last-child:hover .overlay {
+    opacity: 1;
+    display: block;
+  }
+
+  &-cards:last-child:hover .team-text {
+    display: none;
+  }
+
+  .member-name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: $white-color;
+  }
+
+  .member-job {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: $text-color;
+  }
+
+  &-btn {
+    display: none;
+    margin-top: 64px;
+  }
+}
+
+@include mobile() {
+  .team {
+    width: 100%;
+    height: auto;
+    padding: 64px 14px 0 14px;
+    margin-top: 0;
+
+    &-header {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &-title {
+      height: auto;
+      width: 100%;
+      font-size: 28px;
+      line-height: 36px;
+      padding: 8px 8px 0;
+    }
+
+    &-cards {
+      display: none;
+    }
+
+    &-slider {
+      display: block;
+      margin-top: 48px;
+    }
+
+    &-member {
+      margin-top: 0;
+    }
+
+    &-cards-mobile {
+      border: 1px solid $boder-color;
+      width: 100%;
+    }
+
+    &-cards-mobile:last-child {
+      display: none;
+    }
+
+    &-img {
+      width: 100%;
+      height: 72%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-cards-mobile .team-text {
+      margin-top: 20px;
+    }
+
+    .member-name {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .member-job {
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+
+    &-btn {
+      display: flex;
+      width: 100%;
+      height: auto;
+      margin: 48px auto 0 auto;
+    }
+  }
+}
+
+@include tablet() {
+  .team {
+    width: 100%;
+    height: auto;
+    padding: 100px 14px 0;
+
+    &-header {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &-title {
+      height: auto;
+      width: 100%;
+      font-size: 28px;
+      line-height: 36px;
+      padding: 8px 100px 0;
+    }
+
+    &-text {
+      margin: 8px 0 0 8px;
+    }
+
+    .member-name {
+      font-size: 14px;
+      line-height: 22px;
+      color: $white-color;
+    }
+    &-cards:last-child {
+      .member-name {
+        padding: 0;
+      }
+    }
+
+    .member-job {
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 22px;
+      color: $text-color;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $secondary-color;
+      opacity: 0;
+    }
+
+    .overlay-content {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .overlay-link {
+      color: $white-color;
+      font-size: 18px;
+      line-height: 28px;
+      width: 100%;
+      text-decoration: none;
+    }
+
+    &-btn {
+      display: none;
+    }
+  }
+}
+
+@include smDesktop() {
+  .team {
+    width: 100%;
+    height: auto;
+    padding: 100px 14px 0;
+
+    &-title {
+      padding: 8px 110px 0;
+    }
+
+    &-text {
+      margin: 8px 0 0 8px;
+    }
+
+    .member-name {
+      font-size: 14px;
+      line-height: 22px;
+      color: $white-color;
+    }
+
+    .member-job {
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 22px;
+      color: $text-color;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $secondary-color;
+      opacity: 0;
+    }
+
+    .overlay-content {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .overlay-link {
+      color: $white-color;
+      font-size: 18px;
+      line-height: 28px;
+      width: 100%;
+      text-decoration: none;
+    }
+
+    &-btn {
+      display: none;
+    }
+  }
+}
